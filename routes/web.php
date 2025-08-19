@@ -8,3 +8,4 @@ Route::get('/', function () {
 });
 
 Route::get('/sayhello', [TraitController::class, 'getHello']);
+Route::get('/getCode', [TraitController::class, 'getCode']);

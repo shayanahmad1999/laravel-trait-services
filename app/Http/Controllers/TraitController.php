@@ -13,4 +13,9 @@ class TraitController extends Controller
     {
         return $this->sayHello('Shayan');
     }
+
+    public function getCode()
+    {
+        return $this->generateCode(12);
+    }
 }
