@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\TraitController;
 use Illuminate\Support\Facades\Route;
 
@@ -9,3 +10,5 @@ Route::get('/', function () {
 
 Route::get('/sayhello', [TraitController::class, 'getHello']);
 Route::get('/getCode', [TraitController::class, 'getCode']);
+Route::get('/say-hello', [ServiceController::class, 'getHello']);
+Route::get('/get-code', [ServiceController::class, 'getCode']);
