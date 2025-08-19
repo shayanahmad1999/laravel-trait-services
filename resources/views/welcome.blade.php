@@ -10,6 +10,10 @@
 
 <body>
     <h1>Laravel Trait And Services</h1>
+    <a href="{{ url('sayhello') }}">Trait Hello</a>
+    <a href="{{ url('getCode') }}">Trait Code</a>
+    <a href="{{ url('say-hello') }}">Service Hello</a>
+    <a href="{{ url('get-code') }}">Service Code</a>
 </body>
 
 </html>
