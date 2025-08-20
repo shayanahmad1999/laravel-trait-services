@@ -66,6 +66,9 @@
                     <a href="{{ url('post') }}" class="btn btn-outline-warning">
                         Trait Post
                     </a>
+                    <a href="{{ url('/users/create') }}" class="btn btn-outline-success">
+                        Service User
+                    </a>
                 </div>
             </div>
         </div>
