@@ -28,4 +28,5 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/profile/update', [UserController::class, 'update'])->name('profile.update');
     Route::post('/profile/avatar', [UserController::class, 'updateAvatar'])->name('profile.avatar');
     Route::post('/profile/theme', [UserController::class, 'toggleTheme'])->name('profile.theme');
+    Route::post('/logout', [UserController::class, 'logout'])->name('logout');
 });

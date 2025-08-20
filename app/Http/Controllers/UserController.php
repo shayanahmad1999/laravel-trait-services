@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Services\UserService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class UserController extends Controller
 {
@@ -70,5 +71,20 @@ class UserController extends Controller
         $this->userService->toggleTheme($request->theme);
 
         return response()->json(['message' => 'Theme preference updated.']);
+    }
+
+    public function logout(Request $request)
+    {
+        try {
+            Auth::logout();
+            $request->session()->invalidate();
+            $request->session()->regenerateToken();
+
+            return redirect()->back()->with('success', 'You have been logged out successfully.');
+        } catch (\Exception $e) {
+            Log::error('Logout failed: ' . $e->getMessage());
+
+            return redirect()->back()->with('error', 'Logout failed. Please try again.');
+        }
     }
 }

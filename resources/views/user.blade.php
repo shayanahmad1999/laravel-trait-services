@@ -49,12 +49,27 @@
 </head>
 
 <body>
-
     <div class="container">
         <div class="col-md-6 mx-auto">
-            <div class="card">
+            <div class="card p-2">
+                @auth
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <a href="{{ url('user-setting') }}" class="btn btn-primary">
+                            {{ auth()->user()->name }} Setting
+                        </a>
+
+                        <form action="{{ route('logout') }}" method="POST" class="ms-2">
+                            @csrf
+                            <button type="submit" class="btn btn-danger">
+                                Logout
+                            </button>
+                        </form>
+                    </div>
+                @endauth
+
                 <div class="card-header text-center py-3">
-                    <h4><i class="fas fa-user-plus me-2"></i>Create New User {{ auth()->user()->name ?? 'Demo' }}</h4>
+                    <h4><i class="fas fa-user-plus me-2"></i>Create New User {{ auth()->user()->name ?? 'Demo' }}
+                    </h4>
                 </div>
                 <div class="card-body">
                     <!-- Laravel success message -->
@@ -97,7 +112,8 @@
                         </div>
 
                         <div class="mb-3">
-                            <label for="password_confirmation" class="form-label fw-semibold">Confirm Password</label>
+                            <label for="password_confirmation" class="form-label fw-semibold">Confirm
+                                Password</label>
                             <input type="password" name="password_confirmation" class="form-control"
                                 placeholder="••••••••">
                         </div>
