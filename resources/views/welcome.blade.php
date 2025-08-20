@@ -60,6 +60,12 @@
                     <a href="{{ url('image') }}" class="btn btn-outline-dark">
                         <i class="bi bi-image"></i> Trait Image
                     </a>
+                    <a href="{{ url('format-date') }}" class="btn btn-outline-secondary">
+                        Trait Format Date
+                    </a>
+                    <a href="{{ url('post') }}" class="btn btn-outline-warning">
+                        Trait Post
+                    </a>
                 </div>
             </div>
         </div>

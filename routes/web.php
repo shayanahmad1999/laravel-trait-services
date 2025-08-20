@@ -15,3 +15,6 @@ Route::get('/say-hello', [ServiceController::class, 'getHello']);
 Route::get('/get-code', [ServiceController::class, 'getCode']);
 Route::view('/image', 'image');
 Route::post('/upload-image', [ImageUploadController::class, 'store'])->name('image.upload');
+Route::get('/format-date', [TraitController::class, 'getFormatDate']);
+Route::view('/post', 'post');
+Route::post('/post/upload', [TraitController::class, 'store'])->name('post.store');
